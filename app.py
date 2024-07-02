@@ -13,6 +13,7 @@ WEATHER_API_URL = "http://api.weatherapi.com/v1/current.json"
 def hello():
     visitor_name = request.args.get('visitor_name', 'Guest')
     client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    client_ip = client_ip_list[0].strip()
     
     try:
         # Get location data
